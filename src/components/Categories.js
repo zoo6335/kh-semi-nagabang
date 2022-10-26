@@ -2,32 +2,24 @@ import styled from "styled-components";
 
 const categories = [
     {
-        name: 'all',
-        text: '전체보기'
+        name: 'aboutUs',
+        text: '나가방!?'
     },
     {
-        name: 'business',
-        text: '비즈니스'
+        name: 'viewThemes',
+        text: '테마 보기'
     },
     {
-        name: 'entertainment',
-        text: '엔터테인먼트'
+        name: 'freeBoard',
+        text: '자유게시판'
     },
     {
-        name: 'health',
-        text: '건강'
+        name: 'createParty',
+        text: '일행 구하기'
     },
     {
-        name: 'science',
-        text: '과학'
-    },
-    {
-        name: 'sports',
-        text: '스포츠'
-    },
-    {
-        name: 'technology',
-        text: '기술'
+        name: 'boardCollection',
+        text: '보드판 자랑하기'
     }
 ];
 
@@ -47,8 +39,8 @@ const Category = styled.div`
     cursor: pointer;
     white-space: pre;
     text-decoration: none;
-    color: inherit;
-    padding-bottom: 0.25rem;
+    /* color: inherit; */
+    padding-bottom: 0.25rem dashed;
 
     &:hover {
         color:#495057;

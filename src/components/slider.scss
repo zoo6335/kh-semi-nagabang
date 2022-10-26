@@ -1,0 +1,18 @@
+.window {
+    background: blue;
+    width: 500px;
+    height: 250px;
+    overflow: hidden; // 창틀에서 사진들이 넘치지 않도록
+}
+
+.flexbox{
+    display: flex;
+}
+img {
+    width: 500px;
+    height: 250px;
+    object-fit: contain;
+    flex: none;
+  }
+// 화면상에는 첫번째 사진만 나타나지만, 보이지 않는 오른쪽 공간에 다른 사진 두개가 숨어있다.
+// 사진들을 묶어줄 플렉스 컨테이너엔 display: flex를 써주고 아이템에는 flex:none 써주자.
