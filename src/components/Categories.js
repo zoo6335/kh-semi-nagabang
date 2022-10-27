@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// nav 바 카테고리 분리
+// nav 바 카테고리 분리 !!!!!
 const categories = [
     {
         name: 'aboutUs',
