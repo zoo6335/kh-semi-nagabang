@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+// nav 바 카테고리 분리
 const categories = [
     {
         name: 'aboutUs',
@@ -25,32 +25,31 @@ const categories = [
 
 const CategoriesBlock = styled.div`
     display: flex;
-    padding: 1rem;
-    width: 768px;
-    margin: 0 auto;
-    @media screen and (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+    /* @media screen and (max-width: 768px) {
         width: 100%;
-        overflow-x: auto;
-    }
-`;
+        overflow-x: auto; */
+    /* } */
+`; 
 
 const Category = styled.div`
     font-size: 1.125rem;
     cursor: pointer;
-    white-space: pre;
     text-decoration: none;
-    /* color: inherit; */
-    padding-bottom: 0.25rem dashed;
+    padding-bottom: 0.25rem;
 
     &:hover {
-        color:#495057;
+        font-weight: 600;
+        border-bottom: 3px dashed #F99090;
     }
     &:active {
         font-weight: 600;
-        border-bottom: 2px solid #22b8cf;
-        color:#22b8cf;
+        border-bottom: 3px dashed #3bc9db;
+        color: black;
         &:hover {
-            color:#3bc9db;
+            color: blue;
+            /* #3bc9db; */
         }
     }
     & + & {
@@ -63,11 +62,9 @@ const Categories = ({onSelect, category}) => {
     return (
         <CategoriesBlock>
             {categories.map(c => (
-                <Category 
-                key={c.name}
-                active={category===c.name}
-                onClick={()=>onSelect(c.name)}
-                >{c.text} </Category>
+                <Category key={c.name} active={category===c.name} onClick={()=>onSelect(c.name)}>
+                    {c.text}
+                </Category>
             ))}
         </CategoriesBlock>
     );

@@ -1,0 +1,110 @@
+* {
+    color: white;
+}
+.homepage {
+    width: 1024px;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* 1 */
+header {
+    /* border: 1px solid red; */
+    width: 1024px;
+    display: flex;
+    flex-direction: column;
+}
+    /* 2 */
+.slidingBenner{
+    width: 1024px;
+    background-color:darkgray;
+}
+    /* 3 : 테마별 아이콘 구역*/
+section{    
+    width: 1024px;
+    margin: 15px;
+}
+    /* 4 */
+article{
+    /* border: 1px solid red; */
+    width: 1024px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px;
+}
+    /* 5 */
+.recommend{
+    border: 1px solid red;
+    width: 1024px;
+    height: 300px;
+}
+    /* 6 */
+footer{
+    border: 1px solid red;
+    width: 1024px;
+    height: 50px;
+}
+nav {
+    /* border-top: 4px dashed blue;
+    border-bottom: 4px dashed blue;
+    background-color: #F99090; */
+    padding: 5px;
+}
+.logo {
+    margin: 0 auto;
+    width: 200px;
+    height: 150px;
+}
+.memberPass {
+    display: inline;
+    position: relative;
+    top: -140px;
+    right: -890px;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.themeGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon {
+    width: 60px;
+    flex-grow: 1;
+}
+.article-title {
+    width: 450px;
+    border: 3px dashed #8dc1f1d5;
+    border-radius: 20px;
+    background-color: #ffffff4e;
+    padding: 10px 100px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.article-list{
+    width: 450px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-top: 10px;
+    border: 1px solid #8dc1f1d5;
+    border-radius: 20px;
+
+    background-color: #8dc1f178;
+    font-size: 1.2em;
+}
+
+

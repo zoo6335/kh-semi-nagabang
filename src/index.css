@@ -1,13 +1,19 @@
 @import url('//cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.530/neodgm/style.css');
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Jua&family=Nanum+Pen+Script&family=Noto+Serif+KR:wght@200;300;400;700;900&display=swap');
-
-body {
-  /* font-family: 'Jua', sans-serif; */
+* {
+  margin:0; 
+  padding:0; 
+  box-sizing: 
+  border-box; color:black;
   font-family: 'NeoDunggeunmo';
-  margin: 0;
-  width: 500px;
-  background-color: #FFD990;
 }
+body {
+  /* background-color: #8DC0F1; */
+}
+
+img {border: 0;}
+ul, li {list-style: none;}
+a {text-decoration: none;}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
