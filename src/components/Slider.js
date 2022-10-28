@@ -1,14 +1,20 @@
-import { useState, useEffect, useRef } from "react";
 import styled from 'styled-components';
 
 const Slider = () => {
     return(
-        <div className="window">
-            <div className='flexbox'>
-                <p className='sliderEx' style={{height:"250px"}}>sliderEx1</p>
+        <SliderBlock>
+            <div className="window">
+                <div className='flexbox'>
+                    <p className='sliderEx' style={{height:"250px"}}>sliderEx1</p>
+                </div>
             </div>
-        </div>
+        </SliderBlock>
     );
 }
+
+const SliderBlock = styled.div`
+    width: 1016px;
+    background-color:darkgray;
+`;
 
 export default Slider;

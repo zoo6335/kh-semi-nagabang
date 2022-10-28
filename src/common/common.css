@@ -1,0 +1,14 @@
+/* routing 될 페이지의 가장 상위 객체에 해당 container css 를 적용시켜 창 크기 등의 공통사항을 적용합니다. 
+ 수정 필요한 부분은 말씀해주세요 !!!!*/
+.container {
+    border: 4px solid #40BAAA;
+    border-top: none;
+    width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
