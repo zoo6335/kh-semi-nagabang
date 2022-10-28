@@ -5,6 +5,7 @@ import Slider from "../components/Slider.js";
 import logo from "../img/nagabang_logo_w.png";
 import '../pages/Home.css';
 import ghost from "../img/ghost.png";
+import sgt from "../img/sgt.jpg";
 
 const Home = () => {
     const [category, setCategory] = useState('all');
@@ -28,19 +29,19 @@ const Home = () => {
             </div>
             <section>
                 <div className="icons">
-                    <label className="themeGroup"><img className="icon" src={ghost} alt="icon"/>분류명</label>
-                    <label className="themeGroup"><img className="icon" src={ghost} alt="icon"/>분류명</label>
-                    <label className="themeGroup"><img className="icon" src={ghost} alt="icon"/>분류명</label>
-                    <label className="themeGroup"><img className="icon" src={ghost} alt="icon"/>분류명</label>
-                    <label className="themeGroup"><img className="icon" src={ghost} alt="icon"/>분류명</label>
-                    <label className="themeGroup"><img className="icon" src={ghost} alt="icon"/>분류명</label>
-                    <label className="themeGroup"><img className="icon" src={ghost} alt="icon"/>분류명</label>
-                    <label className="themeGroup"><img className="icon" src={ghost} alt="icon"/>분류명</label>                  
+                    <label className="theme-type"><img className="icon" src={ghost} alt="icon"/>분류명</label>
+                    <label className="theme-type"><img className="icon" src={ghost} alt="icon"/>분류명</label>
+                    <label className="theme-type"><img className="icon" src={ghost} alt="icon"/>분류명</label>
+                    <label className="theme-type"><img className="icon" src={ghost} alt="icon"/>분류명</label>
+                    <label className="theme-type"><img className="icon" src={ghost} alt="icon"/>분류명</label>
+                    <label className="theme-type"><img className="icon" src={ghost} alt="icon"/>분류명</label>
+                    <label className="theme-type"><img className="icon" src={ghost} alt="icon"/>분류명</label>
+                    <label className="theme-type"><img className="icon" src={ghost} alt="icon"/>분류명</label>                  
                 </div>
             </section>
             <article>
                 <div className="likeRank">
-                    <h3 className="article-title">좋아요 Ranking 💖</h3>
+                    <p className="article-title">좋아요 Ranking 💖</p>
                     <div className="article-list">
                         <div>게시물 끌어와서 Title 출력...</div>
                         <div>게시물 끌어와서 Title 출력...</div>
@@ -50,7 +51,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="hotBoard">
-                    <h3 className="article-title">HOT 자유게시판 🔥</h3>
+                    <p className="article-title">HOT 자유게시판 🔥</p>
                     <div className="article-list">
                         <div>게시물 끌어와서 Title 출력...</div>
                         <div>게시물 끌어와서 Title 출력...</div>
@@ -61,10 +62,21 @@ const Home = () => {
                 </div>
             </article>
             <div className="recommend">
-                <p>지금 딱 하기 좋은 방탈출 추천...</p>
+                <p className="rec-title">지금 딱 하기 좋은 방탈출 추천 🎃🧛‍♂️</p>
+                <div className="suggest-list">
+                    <lable className="suggestion"><img src={sgt} alt="추천img" className="sgt-img" />룰루랄라 방탈출-안녕하세요?</lable>
+                    <lable className="suggestion"><img src={sgt} alt="추천img" className="sgt-img" />룰루랄라 방탈출-안녕하세요?</lable>
+                    <lable className="suggestion"><img src={sgt} alt="추천img" className="sgt-img" />룰루랄라 방탈출-안녕하세요?</lable>
+                    <lable className="suggestion"><img src={sgt} alt="추천img" className="sgt-img" />룰루랄라 방탈출-안녕하세요?</lable>
+                    <lable className="suggestion"><img src={sgt} alt="추천img" className="sgt-img" />룰루랄라 방탈출-안녕하세요?</lable>
+
+                </div>
             </div>
             <footer>
-                개인정보 처리방침 등
+                <span>개인정보 처리방침</span>
+                <span>서비스 약관</span>
+                <span>©2022 NagaBang, Inc. All Rights Reserved.</span>
+                <span className="span_nagabang">NagaBang</span>
             </footer>
         </div>
     )
