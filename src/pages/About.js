@@ -1,4 +1,5 @@
 import "../common/common.css"
+
 const About = () => {
     return (
         <div className="container">

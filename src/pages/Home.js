@@ -3,7 +3,6 @@ import Carousel from "../components/Slider";
 import ThemeType from "../components/ThemeType";
 import Articles from "../components/Articles";
 import Recommend from "../components/Recommend";
-import Footer from "../components/Footer";
 
 const Home = () => {
     return (
@@ -12,7 +11,6 @@ const Home = () => {
             <ThemeType />
             <Articles />
             <Recommend />
-            <Footer />
         </div>
     )
 }

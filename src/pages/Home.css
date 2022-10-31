@@ -4,6 +4,7 @@
 .homepage {
     border: 4px solid #40BAAA;
     border-top: none;
+    border-bottom: none;
     width: 1024px;
     height: 100%;
     margin: 0 auto;

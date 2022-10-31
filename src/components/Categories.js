@@ -1,32 +1,21 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Categories = () => {
     return (
         <CategoryBlock>
-            <p className="category" onClick={onClickAbout}>나가방!?</p>
-            <p className="category" onClick={onClickTheme}>테마보기</p>
-            <p className="category" onClick={onClickFB}>자유게시판</p>
-            <p className="category" onClick={onClickParty}>일행 구하기</p>
-            <p className="category" onClick={onClickBrag}>보드판 자랑하기</p>
+            <Link to="/about"><p className="category">나가방!?</p></Link>
+            <Link to="/theme"><p className="category">테마보기</p></Link>
+            <Link to="/freeboard"><p className="category">자유게시판</p></Link>
+            <Link to="/getparty"><p className="category">일행 구하기</p></Link>
+            <Link to="/bragging"><p className="category">보드판 자랑하기</p></Link>
         </CategoryBlock>
     )
 }
-
-const onClickAbout = ()=> {
-    window.location.replace("/about");
-}
-const onClickTheme = ()=> {
-    window.location.replace("/theme");
-}
-const onClickFB = ()=> {
-    window.location.replace("/freeboard");
-}
-const onClickParty = ()=> {
-    window.location.replace("/getparty");
-}
-const onClickBrag = ()=> {
-    window.location.replace("/bragging");
-}
+// 아래 방식은 히스토리가 없어서 변경..
+// const onClickAbout = ()=> {
+//     window.location.replace("/about");
+// }
 
 const CategoryBlock = styled.div`
     display: flex;

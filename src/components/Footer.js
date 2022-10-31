@@ -11,11 +11,15 @@ const Footer = () => {
     )
 }
 const FooterBlock = styled.div`
-    border-top: 1px solid #40BAAA;
     width: 1024px;
     height: auto;
+    margin: 0 auto;  
+    width: 1024px;
     padding: 10px 10px;
     font-size: 0.8em;
+    background-color: black;
+    border: 4px solid #40BAAA;
+    border-top: 1px solid #40BAAA;
 
     & > span {
     margin: 10px;

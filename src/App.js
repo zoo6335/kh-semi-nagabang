@@ -4,11 +4,12 @@ import About from './pages/About';
 import {TestA, TestB, TestC, TestD, TestE, TestF} from "./pages/DummyPages";
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
-        <Header></Header>
+        <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -19,6 +20,7 @@ function App() {
             <Route path="/signin" element={<TestE />} />
             <Route path="/login" element={<TestF />} />
           </Routes>
+        <Footer />
     </Router>
   );
 }

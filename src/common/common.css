@@ -1,8 +1,10 @@
-/* routing 될 페이지의 가장 상위 객체에 해당 className으로 container지정하여 css 를 적용시켜 창 크기 등의 공통사항을 적용합니다. 
-페이지의 일관성을 크게 해치지 않는 선에서 자유롭게 변경해주시면 좋을것 같아요. */
+/* routing 될 페이지의 가장 상위 객체에 해당 className으로 container지정하여 
+css 를 적용시켜 창 크기 등의 공통사항을 적용합니다. 
+페이지의 일관성을 크게 해치지 않는 선에서 자유롭게 변경해주시면 좋을것 같아요! */
 .container {
     border: 4px solid #40BAAA;
     border-top: none;
+    border-bottom: none; /* border가 헤더,푸터에 모두 적용되어 있기 때문에 이중적용이 되면 이쁘지 않아서 none 으로 주었습니다. */
     width: 1024px;
     height: 100%;
     margin: 0 auto;
