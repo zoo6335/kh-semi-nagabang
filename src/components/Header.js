@@ -5,14 +5,15 @@ import Categories from "./Categories";
 
 const Header = () => {
     return (
-         <HeaderBlock>
+        <HeaderBlock>
             <img className="logo" src={logo} alt="나가방 로고" onClick={onClickLogo}></img>
-            <div className="memberPass">
+            <div className="member">
+                {/* 로그인 완료하면 회원가입-> 로그아웃, 로그인 -> 닉네임 으로 문구가 변경되게 할 예정 */}
                 <p className="signIn" onClick={onClickSignin}>회원가입</p>
                 <p className="logIn" onClick={onClickLogin}>로그인</p>
             </div>
             <Categories />
-        </HeaderBlock> 
+        </HeaderBlock>
     );
 };
 // 로고 click -> 홈화면
@@ -41,8 +42,11 @@ const HeaderBlock = styled.div`
         margin: 0 auto;
         width: 100px;
         height: 80px;
+        &:hover{
+            cursor: pointer;
+        }
     }
-    .memberPass {
+    .member {
         display: flex;
         position: relative;
         left: 870px;
@@ -52,6 +56,7 @@ const HeaderBlock = styled.div`
             &:hover {
                 font-weight: 600;
                 border-bottom: 3px dashed #F99090;
+                cursor: pointer;
             }
             &:active {
                 font-weight: 600;
