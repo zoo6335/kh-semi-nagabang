@@ -1,16 +1,13 @@
 import styled from "styled-components";
 import BoardRank from "./BoardRank";
+import RoomRank from "./RoomRank";
 const Articles = () => {
     return (
         <ArticleBlock>
             <div className="likeRank">
                 <p className="article-title">좋아요 Ranking 💖</p>
                 <div className="article-box">
-                    <div>게시물 끌어와서 Title 출력...</div>
-                    <div>게시물 끌어와서 Title 출력...</div>
-                    <div>게시물 끌어와서 Title 출력...</div>
-                    <div>게시물 끌어와서 Title 출력...</div>
-                    <div>게시물 끌어와서 Title 출력...</div>
+                    <RoomRank />
                 </div>
             </div>
             <div className="hotBoard">

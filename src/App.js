@@ -5,6 +5,8 @@ import {TestA, TestB, TestC, TestD, TestE, TestF} from "./pages/DummyPages";
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import ShowBoard from "./components/ShowBoard";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
             <Route path="/bragging" element={<TestD />} />
             <Route path="/signin" element={<TestE />} />
             <Route path="/login" element={<TestF />} />
+            <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+            <Route path='/showBoard' element={<ShowBoard />}/>
           </Routes>
         <Footer />
     </Router>

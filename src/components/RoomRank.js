@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import RankingApi from '../api/rankingApi';
 import styled from 'styled-components';
 import '../App.css'
-import { Link } from 'react-router-dom';
 
-const BoardRank = () => {
-    const [boardRank, setBoardRank] = useState('');
+const RoomRank = () => {
+    const [roomRank, setRoomRank] = useState('');
     const [loading, setLoading] = useState(false);
 
     const RankingBlock = styled.div`
@@ -31,18 +30,12 @@ const BoardRank = () => {
        }
     `;
 
-const onClickBoardDetail = (val) => {
-    console.log("보드 상세 정보로 이동 : " + val);
-    window.localStorage.setItem("Detail", val);
-    window.location.replace("/showBoard");
-} 
-
     useEffect(() => {
         const rankData = async () => {
             setLoading(true);
             try {
-                const response = await RankingApi.boardRank("ALL"); // 제이슨객체로 받아오고
-                setBoardRank(response.data); // 그걸 객체로 받아서
+                const response = await RankingApi.roomRank("ALL"); // 제이슨객체로 받아오고
+                setRoomRank(response.data); // 그걸 객체로 받아서
                 console.log(response.data) // 그 객체 모음을 찍어보는거야 
             } catch (e) {
                 console.log(e);
@@ -59,14 +52,14 @@ const onClickBoardDetail = (val) => {
         <RankingBlock>
             <RankList>
                 <tr className='row-title'>
-                    <th>순위</th><th>분류</th><th>제목</th><th>조회수</th><th></th>
+                    <th>순위</th><th>분류</th><th>테마명</th><th>좋아요</th><th></th>
                 </tr>
-                {boardRank && boardRank.map(board => (
-                    <tr key={board.postId} onClick={()=>onClickBoardDetail(board.postId)}> 
-                        <td>{board.rank}</td>
-                        <td>{board.category}</td>
-                        <td>{board.title}</td>
-                        <td>{board.view}</td>
+                {roomRank && roomRank.map(room => (
+                    <tr key={room.rank}>
+                        <td>{room.rank}</td>
+                        <td>{room.category}</td>
+                        <td>{room.title}</td>
+                        <td>{room.like}</td>
                     </tr>
                 ))}
             </RankList>
@@ -75,4 +68,4 @@ const onClickBoardDetail = (val) => {
 }
 
 
-export default BoardRank;
+export default RoomRank;

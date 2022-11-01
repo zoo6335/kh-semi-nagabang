@@ -10,7 +10,7 @@ const TestA = () => {
 const TestB = () => {
     return (
         <div className="container">
-            <h1>자유게시판 페이지 - 재이님</h1>
+            <h1>자유게시판 페이지 - 하늘님</h1>
             <p>우아아앙 자유게시판 page!!!!!!!!!!</p>
         </div>
     )
@@ -18,7 +18,7 @@ const TestB = () => {
 const TestC = () => {
     return (
         <div className="container">
-            <h1>일행 구하기 페이지 - 하늘님</h1>
+            <h1>일행 구하기 페이지 - 재이님</h1>
             <p>우아아앙 일행 구하기 page!!!!!!!!!!</p>
         </div>
     )
