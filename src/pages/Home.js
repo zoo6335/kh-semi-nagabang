@@ -1,13 +1,14 @@
 import '../pages/Home.css';
-import Carousel from "../components/Slider";
+import Slider from "../components/Slider";
 import ThemeType from "../components/ThemeType";
 import Articles from "../components/Articles";
 import Recommend from "../components/Recommend";
+import styled from 'styled-components';
 
 const Home = () => {
     return (
         <div className="homepage">
-            <Carousel />
+            <Slider />
             <ThemeType />
             <Articles />
             <Recommend />

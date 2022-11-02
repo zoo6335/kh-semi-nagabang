@@ -1,42 +1,63 @@
 import styled from 'styled-components';
-import React, { useLayoutEffect, useRef, useEffect, useState } from "react";
-import Reindeer from "../img/reindeer.png";
-import Santa from "../img/santa.png";
-import Wreath from "../img/wreath.png";
-import "../App.css";
+import img1 from "../img/test1.jpg";
+import img2 from "../img/test2.jpg";
+import img3 from "../img/test3.jpg";
 
 const Slider = () => {
- 
     return (
-        <div>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src={Reindeer} class="d-block" alt="..." />
+        <div className='box'>
+            <SlideBlock>
+                <div className='container'>
+                    <div className='inner'>
+                        <img src={img1} alt="." />
                     </div>
-                    <div class="carousel-item">
-                        <img src={Santa} class="d-block" alt="..." />
+                    <div className='inner'>
+                        <img src={img2} alt="." />
                     </div>
-                    <div class="carousel-item">
-                        <img src={Wreath} class="d-block" alt="..." />
+                    <div className='inner'>
+                        <img src={img3} alt="." />
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+                {/* <div className='bzone'>
+                    <button className='버튼1'>🐻🐻🐻</button>
+                    <button className='버튼2'>👒👒👒</button>
+                    <button className='버튼3'>🤦‍♀️🤦‍♀️🤦‍♀️</button>
+                </div> */}
+            </SlideBlock>
         </div>
     );
 }
+
+const SlideBlock = styled.div`
+    *{border: 1px solid red;}
+    overflow:hidden;
+    margin: 0 auto;
+    padding: 0 0;
+    display: flex;
+    width: 1024px;
+    button{
+        color: red;
+        clear:both;
+    &:active{
+    }
+    }
+        
+    .container{
+        padding: 0;
+        flex-direction: row;
+        transform: translate(-1024px);
+        transition: transform 0.5s;
+    }
+    .inner img[src]{
+        width: 1024px;
+        height: 200px;
+    }
+    .bzone{
+        position: fixed;
+        left: 800px;
+        top: 300px;
+    }
+`;
+
 
 export default Slider;

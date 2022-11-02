@@ -23,6 +23,7 @@ const onClickLogo = () => {
 }
 
 const HeaderBlock = styled.div`
+    z-index:1;
     background-color: rgb(0, 0, 0);
     margin: 0 auto;  
     width: 1024px;
