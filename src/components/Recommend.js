@@ -12,7 +12,6 @@ const Recommend = () => {
                 <lable className="suggestion"><img src={sgt} alt="추천img" className="sgt-img" />[지역] 방탈출 명</lable>
             </div>
         </RecommendBlock>
-
     )
 }
 

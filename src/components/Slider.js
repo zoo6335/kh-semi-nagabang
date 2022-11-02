@@ -1,30 +1,42 @@
 import styled from 'styled-components';
-import arrowL from "../img/arrowLeft.png";
-import arrowR from "../img/arrowRight.png";
 import React, { useLayoutEffect, useRef, useEffect, useState } from "react";
-
-// const [currenetIndex, setCurrentIndex] = useState(0);
-// 애니메이션, transition 효과로 서서히 한장씩 보여주는게 구현하기 더 나을듯..?
-// animation-iteration-count: infinite; 사용해서 무한 반복
+import Reindeer from "../img/reindeer.png";
+import Santa from "../img/santa.png";
+import Wreath from "../img/wreath.png";
+import "../App.css";
 
 const Slider = () => {
+ 
     return (
-        <SliderBlock>
-            <div className="slider-list">
+        <div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src={Reindeer} class="d-block" alt="..." />
+                    </div>
+                    <div class="carousel-item">
+                        <img src={Santa} class="d-block" alt="..." />
+                    </div>
+                    <div class="carousel-item">
+                        <img src={Wreath} class="d-block" alt="..." />
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <img src={arrowL} alt=''></img>
-            <img src={arrowR} alt=''></img>
-        </SliderBlock>
+        </div>
     );
 }
-
-const SliderBlock = styled.div`
-    width: 1016px;
-    height: 250px;
-    background-color: darkgray;
-    img[src] {
-        width : 30px;
-    }
-`;
 
 export default Slider;

@@ -10,9 +10,9 @@ const BoardBlock = styled.div`
     border-top: none;
     border-bottom: none;
     background-color: rgb(0, 0, 0);
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
 `;
 
 const BoardDetail = () => {
@@ -21,7 +21,7 @@ const BoardDetail = () => {
     const [boardDetail, setBoardDetail] = useState("");
 
     useEffect(() => {
-        const memberData = async () => {
+        const boardData = async () => {
             try {
                 const response = await RankingApi.showBoard(getDetail); // 전체 회원 조회
                 setBoardDetail(response.data);
@@ -30,7 +30,7 @@ const BoardDetail = () => {
                 console.log(e);
             }
         };
-        memberData();
+        boardData();
     }, []);
 
     return (
@@ -38,6 +38,7 @@ const BoardDetail = () => {
            {boardDetail && boardDetail.map(board => (
             <BoardBlock key={board.postId}>
                 <p>게시글 번호 : {board.postId}</p>
+                <p>게시일 : {board.postDate}</p>
                 <p>카테고리 : {board.category}</p>
                 <p>제목 : {board.title}</p>
                 <p>내용 : {board.content}</p>

@@ -7,6 +7,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ShowBoard from "./components/ShowBoard";
+import ShowRoom from "./components/ShowRoom";
+import SelectType from './components/SelectType';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
             <Route path="/login" element={<TestF />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
             <Route path='/showBoard' element={<ShowBoard />}/>
+            <Route path='/showRoom' element={<ShowRoom />}/>
+            <Route path='/selectType' element={<SelectType />}/>
           </Routes>
         <Footer />
     </Router>

@@ -6,29 +6,7 @@ import '../App.css'
 const RoomRank = () => {
     const [roomRank, setRoomRank] = useState('');
     const [loading, setLoading] = useState(false);
-
-    const RankingBlock = styled.div`
-        box-sizing: border-box;
-        table, tr, th, td {
-            font-size:18px;
-            font-weight: 100px;
-            /* border : 1px solid black; */
-            border-collapse : collapse;  
-            text-align: center;
-        }
-        tr{
-            height: 28px;
-        }
-        th{
-            color: white;
-            text-shadow: -4px 0 #000, -4px 1px #000, 1px 0 #000, 0 -1px #000;
-        }
-    `;
-    const RankList = styled.table`
-       button{
-        color: black;
-       }
-    `;
+    
 
     useEffect(() => {
         const rankData = async () => {
@@ -50,22 +28,54 @@ const RoomRank = () => {
     }
     return (
         <RankingBlock>
-            <RankList>
-                <tr className='row-title'>
-                    <th>순위</th><th>분류</th><th>테마명</th><th>좋아요</th><th></th>
-                </tr>
-                {roomRank && roomRank.map(room => (
-                    <tr key={room.rank}>
-                        <td>{room.rank}</td>
-                        <td>{room.category}</td>
-                        <td>{room.title}</td>
-                        <td>{room.like}</td>
+            <table>
+                <thead>
+                    <tr className='row-title'>
+                        <th>순위</th><th>분류</th><th>테마명</th><th>좋아요</th><th></th>
                     </tr>
-                ))}
-            </RankList>
+                </thead>
+                <tbody>
+                    {roomRank && roomRank.map(room => (
+                        <tr key={room.postId} onClick={() => onClickRoomDetail(room.postId)}>
+                            <td width="50px">{room.rank}위</td>
+                            <td width="100px">{room.category}</td>
+                            <td width="200px">{room.title}</td>
+                            <td width="70px">{room.like}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </RankingBlock>
     );
 }
 
+const onClickRoomDetail = (val) => {
+    console.log("방탈출 소개 상세 페이지 이동 : " + val);
+    window.localStorage.setItem("Detail", val);  // Detail이 key, val이 value로 데이터 생성
+    window.location.replace("/showRoom"); // replace 를 사용해서 이전 페이지로 이동이 불가능함..
+}
+
+const RankingBlock = styled.div`
+    box-sizing: border-box;
+    table, th, td {
+        font-size: 18px;
+        border-collapse : collapse;  
+        text-align: center;
+        height: 28px;
+    }
+    tr{ // 테이블 행 아래 보더 지정
+        border-bottom: 2px dashed rgba(0,0,0,0.5);
+        &:hover{
+            cursor:pointer;
+        }
+    }
+    th{ // 제목행
+        color: white;
+        text-shadow: -4px 0 #000, -4px 1px #000, 1px 0 #000, 0 -1px #000;
+        &:hover{
+            cursor: default;
+        }
+    } 
+`;
 
 export default RoomRank;

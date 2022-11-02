@@ -1,37 +1,37 @@
 import styled from "styled-components";
 // import 'https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap';
 
+const Context = styled.div`
+    *{
+        color: black;
+        font-family: 'Gowun Batang', serif;
+    }
+    border: 4px solid #40BAAA;
+    border-top: none;
+    border-bottom: none;
+    width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    .title{
+        color: white;
+        font-family: 'NeoDunggeunmo';
+        font-size: 1.6em;
+        margin: 10px;
+    }
+    & > div{
+        width: 80%;
+        margin: 10px;
+        padding: 20px 50px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+`;
 const PrivacyPolicy = ()=> {
-    const Context = styled.div`
-        *{
-            color: black;
-            font-family: 'Gowun Batang', serif;
-        }
-        border: 4px solid #40BAAA;
-        border-top: none;
-        border-bottom: none;
-        width: 1024px;
-        height: 100%;
-        margin: 0 auto;
-        background-color: rgb(0, 0, 0);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        .title{
-            color: white;
-            font-family: 'NeoDunggeunmo';
-            font-size: 1.6em;
-            margin: 10px;
-        }
-        & > div{
-            width: 80%;
-            margin: 10px;
-            padding: 20px 50px;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-    `;
     return(
         <Context>
             <p className="title">개인정보 보호방침</p>

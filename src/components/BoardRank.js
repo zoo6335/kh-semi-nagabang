@@ -2,48 +2,24 @@ import { useState, useEffect } from 'react';
 import RankingApi from '../api/rankingApi';
 import styled from 'styled-components';
 import '../App.css'
-import { Link } from 'react-router-dom';
 
 const BoardRank = () => {
     const [boardRank, setBoardRank] = useState('');
     const [loading, setLoading] = useState(false);
-
-    const RankingBlock = styled.div`
-        box-sizing: border-box;
-        table, tr, th, td {
-            font-size:18px;
-            font-weight: 100px;
-            /* border : 1px solid black; */
-            border-collapse : collapse;  
-            text-align: center;
-        }
-        tr{
-            height: 28px;
-        }
-        th{
-            color: white;
-            text-shadow: -4px 0 #000, -4px 1px #000, 1px 0 #000, 0 -1px #000;
-        }
-    `;
-    const RankList = styled.table`
-       button{
-        color: black;
-       }
-    `;
-
-const onClickBoardDetail = (val) => {
-    console.log("보드 상세 정보로 이동 : " + val);
-    window.localStorage.setItem("Detail", val);
-    window.location.replace("/showBoard");
-} 
+    
+    const onClickBoardDetail = (val) => {
+        console.log("보드 상세 정보로 이동 : " + val);
+        window.localStorage.setItem("Detail", val);
+        window.location.replace("/showBoard");
+    }
 
     useEffect(() => {
         const rankData = async () => {
             setLoading(true);
             try {
-                const response = await RankingApi.boardRank("ALL"); // 제이슨객체로 받아오고
-                setBoardRank(response.data); // 그걸 객체로 받아서
-                console.log(response.data) // 그 객체 모음을 찍어보는거야 
+                const response = await RankingApi.boardRank("ALL");
+                setBoardRank(response.data);
+                console.log(response.data)
             } catch (e) {
                 console.log(e);
             }
@@ -51,28 +27,52 @@ const onClickBoardDetail = (val) => {
         };
         rankData();
     }, []);
-
     if (loading) {
         return <RankingBlock>조금만 기다려주세요...👩‍💻</RankingBlock>
     }
     return (
         <RankingBlock>
-            <RankList>
-                <tr className='row-title'>
-                    <th>순위</th><th>분류</th><th>제목</th><th>조회수</th><th></th>
-                </tr>
-                {boardRank && boardRank.map(board => (
-                    <tr key={board.postId} onClick={()=>onClickBoardDetail(board.postId)}> 
-                        <td>{board.rank}</td>
-                        <td>{board.category}</td>
-                        <td>{board.title}</td>
-                        <td>{board.view}</td>
+            <table>
+                <thead>
+                    <tr className='row-title'>
+                        <th>순위</th><th>분류</th><th>제목</th><th>조회수</th><th></th>
                     </tr>
-                ))}
-            </RankList>
+                </thead>
+                <tbody>
+                    {boardRank && boardRank.map(board => (
+                        <tr key={board.postId} onClick={() => onClickBoardDetail(board.postId)}>
+                            <td width="50px">{board.rank}위</td>
+                            <td width="100px">{board.category}</td>
+                            <td width="200px">{board.title}</td>
+                            <td width="70px">{board.view}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </RankingBlock>
     );
 }
 
-
+const RankingBlock = styled.div`
+    box-sizing: border-box;
+    table, th, td {
+        font-size: 18px;
+        border-collapse : collapse;  
+        text-align: center;
+        height: 28px;
+    }
+    tr{ // 테이블 행 아래 보더 지정
+        border-bottom: 2px dashed rgba(0,0,0,0.5);
+        &:hover{
+            cursor:pointer;
+        }
+    }
+    th{ // 제목행
+        color: white;
+        text-shadow: -4px 0 #000, -4px 1px #000, 1px 0 #000, 0 -1px #000;
+        &:hover{
+            cursor: default;
+        }
+    }
+`;
 export default BoardRank;
